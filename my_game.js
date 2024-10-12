@@ -29,7 +29,8 @@ $(".simon-btn").click(function() {
 
     var userChosenColor = $(this).attr("id");
     userClickedPattern.push(userChosenColor);
-    playSound(userChosenColor);
+    
+    // Убрали воспроизведение звука
     animatePress(userChosenColor);
     checkAnswer(userClickedPattern.length - 1);
 });
@@ -42,13 +43,13 @@ function checkAnswer(currentLevel) {
             }, 1000);
         }
     } else {
-        playSound("wrong");
+        // Убрали воспроизведение звука
         $("body").addClass("game-over");
         setTimeout(function() {
             $("body").removeClass("game-over");
         }, 200);
-        $("#play-button").removeClass("d-none").text("Играть снова"); // Показать кнопку для перезапуска игры
-        started = false;
+        
+        $("#play-button").removeClass("d-none").text("Играть снова");
     }
 }
 
@@ -56,7 +57,7 @@ function nextSequence() {
     userClickedPattern = [];
     level++;
     $("#level-title").text("Уровень " + level);
-
+    
     var randomNumber = Math.floor(Math.random() * 4);
     var randomChosenColor = buttonColors[randomNumber];
     gamePattern.push(randomChosenColor);
@@ -70,25 +71,13 @@ function showSequence() {
     var intervalId = setInterval(function() {
         var currentColor = gamePattern[i];
         $("#" + currentColor).fadeIn(100).fadeOut(100).fadeIn(100);
-        playSound(currentColor);
+
         i++;
         if (i >= gamePattern.length) {
             clearInterval(intervalId);
             clickEnabled = true;
         }
     }, 600);
-}
-
-function playSound(color) {
-    var audio;
-    if (color === "wrong") {
-        audio = new Audio("sounds/windows-error-sound-effect-35894.mp3"); // Звук ошибки
-    } else {
-        audio = new Audio("sounds/item-pick-up-38258.mp3"); // Звук нажатия на цветную кнопку
-    }
-    audio.play().catch(function(error) {
-        console.error("Ошибка воспроизведения звука:", error);
-    });
 }
 
 function animatePress(currentColor) {
