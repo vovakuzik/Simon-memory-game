@@ -1,0 +1,175 @@
+/* Общие стили */
+html {
+  scroll-behavior: smooth; /* Плавная прокрутка */
+  height: 100%;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: #011F3F;
+
+  background-size: 600% 400%;
+  background-repeat: no-repeat;
+  animation: gradient 15s ease infinite;
+  color: white;
+}
+
+
+/* Стили навигации */
+nav {
+  background-color: #333;
+  padding: 10px;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav ul li {
+  margin-right: 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+h1 {
+  color: #fff;
+  margin-left: 20px;
+  font-size: 24px;
+}
+
+/* Основная часть */
+main {
+  flex: 1;
+}
+
+/* Стили игры "Симон" */
+.simon-btn {
+  width: 100px;
+  height: 100px;
+  margin: 15px;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+}
+
+@media (min-width: 768px) {
+  .simon-btn {
+      width: 200px;
+      height: 200px;
+  }
+}
+
+#red { background-color: red; }
+#green { background-color: green; }
+#yellow { background-color: yellow; }
+#blue { background-color: blue; }
+
+.pressed {
+  box-shadow: 0 0 20px white;
+  opacity: 0.7;
+}
+
+.game-over {
+  background-color: red;
+}
+
+/* Кнопка начала игры */
+#play-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1.5rem;
+  color: white;
+  background-color: #28a745;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#play-button:hover {
+  background-color: #218838;
+}
+
+/* Кнопка таблицы лидеров */
+#toggle-leaderboard {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#toggle-leaderboard:hover {
+  background-color: #0069d9;
+}
+
+/* Секция галереи */
+#gallery {
+  margin: 20px;
+}
+
+.photo-grid {
+  display: flex; /* Используем Flexbox для горизонтального размещения */
+  gap: 20px; /* Расстояние между колонками */
+  justify-content: center; /* Выровнять изображения по центру */
+}
+
+.photo {
+  width: 45%; /* Задаем ширину каждого блока изображения */
+}
+
+.photo img {
+  width: 100%; /* Изображения занимают всю ширину контейнера */
+  height: auto;
+  border-radius: 10px; /* Радиус закругления углов */
+}
+
+/* Стили футера */
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #f1f1f1;
+  font-size: 14px;
+}
+
+.anchor-link {
+  position: fixed; 
+  right: 20px; 
+  bottom: 20px; 
+  background-color: #333;
+  color: white;
+  padding: 10px 15px;
+  text-decoration: none;
+  border-radius: 50%;
+  font-size: 24px; /* Увеличиваем размер стрелки */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.anchor-link:hover {
+  background-color: #555;
+}
+
+#game-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  flex-direction: row; /* Изменено на горизонтальное расположение */
+}
