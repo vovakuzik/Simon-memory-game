@@ -114,9 +114,9 @@ function showSequence() {
 function playSound(color) {
     var audio;
     if (color === "wrong") {
-        audio = new Audio("sounds/windows-error-sound-effect-35894.mp3");
+        audio = new Audio("windows-error-sound-effect-35894.mp3");
     } else {
-        audio = new Audio("sounds/item-pick-up-38258.mp3");
+        audio = new Audio("item-pick-up-38258.mp3");
     }
     audio.play().catch(function(error) {
         console.error("Ошибка воспроизведения звука:", error);
