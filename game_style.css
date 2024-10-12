@@ -30,10 +30,34 @@ body {
   }
 }
 
-#red { background-color: red; }
-#green { background-color: green; }
-#yellow { background-color: yellow; }
-#blue { background-color: blue; }
+#red { 
+  background-color: red; 
+}
+#red:hover {
+  background-color: darkred; /* Цвет при наведении */
+}
+
+#green { 
+  background-color: green; 
+}
+#green:hover {
+  background-color: darkgreen; /* Цвет при наведении */
+}
+
+#yellow { 
+  background-color: yellow; 
+}
+#yellow:hover {
+  background-color: orange; /* Цвет при наведении */
+}
+
+#blue { 
+  background-color: blue; 
+}
+#blue:hover {
+  background-color: darkblue; /* Цвет при наведении */
+}
+
 
 .pressed {
   box-shadow: 0 0 20px white;
